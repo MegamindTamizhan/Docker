@@ -4,10 +4,17 @@
      
      Eg: docker commit -m "apache + php" myubuntu megamindtamizhan\myubuntu:latest
 
-# How to copy Docker images from one host to another without using a repository
+# Docker Image Save: Save one or more images to a tar archive
 
     $ docker save [OPTIONS] IMAGE [IMAGE...]
     
      Eg: docker save myubuntu > myubuntubak.tar
+
+# Load an image or repository from a tar archive (even if compressed with gzip, bzip2, or xz) from a file or STDIN. It restores both images and tags
+
+    $ docker load [OPTIONS]
+
+    Eg: docker load < myubuntubak.tar
+        docker load -i myubuntubak.tar
 
         
