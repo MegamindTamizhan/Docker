@@ -21,6 +21,20 @@
       Eg: docker load < myubuntubak.tar
         docker load -i myubuntubak.tar
 
-#
+# Fetch the logs of a container
 
-        
+    $ docker logs Container Name or ID
+
+      Eg: docker logs portainer
+
+# Docker Container Registry Login
+
+    $ docker login
+    $ Username:
+    $ Password:
+
+# Other Container Registry Login
+
+    $ docker login registry-url
+    $ Username:
+    $ Password:
