@@ -38,3 +38,15 @@
     $ docker login registry-url
     $ Username:
     $ Password:
+
+# OS Container Running Cmd
+
+    $ docker run -dit --name alpineos alpine:latest /bin/sh
+
+    Eg. docker run -dit --name container name image name shell type
+
+# Container OS Login
+
+    $ docker exec -it alpineos /bin/sh
+
+    Eg. docker exec -it container name or ID shell type
