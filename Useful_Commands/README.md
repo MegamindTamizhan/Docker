@@ -39,6 +39,14 @@
     $ Username:
     $ Password:
 
+# Logout from a Docker Registry
+
+    $ docker logout
+
+# Docker Registry Authentication File
+
+    $ cat ~/.docker/config.json
+
 # OS Container Running Cmd
 
     $ docker run -dit --name alpineos alpine:latest /bin/sh
@@ -50,3 +58,34 @@
     $ docker exec -it alpineos /bin/sh
 
     Eg. docker exec -it container name or ID shell type
+
+# Build an image from a Dockerfile
+
+    $ docker build -t web:v1 .
+
+    Eg. docker build -t image name:tag name .-> Dockerfile path
+
+    $ docker build -t megamindtamizhan/firstnginx_image:v1 .
+
+    Eg. docker build -t dockerhubid/imagename:tagname .-> Dockerfile path
+
+#  Build and Run your App with Compose
+
+    $ docker-compose up -d
+
+    Eg. docker-compose up (-d run in background)
+
+    $ docker-compose up -d app
+
+    Eg. docker-compose up -d app -> container name
+
+# Tag & Push the Docker Image to Docker Hub
+
+    $ docker images
+    $ docker tag megamindtamizhan/mynginx_image1:v1 megamindtamizhan/mynginx_image1:v1-release
+    $ docker push megamindtamizhan/mynginx_image1:v1-release
+
+      Eg.,
+      Replace your docker hub account Id
+      docker tag <your-docker-hub-id>/mynginx_image1:v1 <your-docker-hub-id>/mynginx_image1:v1-release
+      docker push <your-docker-hub-id>/mynginx_image1:v1-release
