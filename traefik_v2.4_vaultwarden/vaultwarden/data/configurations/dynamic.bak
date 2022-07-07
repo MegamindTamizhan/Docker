@@ -1,0 +1,43 @@
+# Dynamic configuration
+http:
+  middlewares:
+    nofloc:
+      headers:
+        customResponseHeaders:
+          Permissions-Policy: "interest-cohort=()"
+    secureHeaders:
+      headers:
+        sslRedirect: true
+        forceSTSHeader: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000   
+   
+    bw-stripPrefix:
+      stripPrefix:
+        prefixes:
+          - "/notifications/hub"
+        forceSlash: false
+
+    # UserName : admin
+    # Password : qwer1234    
+    user-auth:
+      basicAuth:
+        users:
+          - "admin:$apr1$YLZKeZ3T$3BAdSw.Kp9JWOHIJOPx0x1"
+
+tls:
+  certificates:
+    - certFile: /ssl/bwcert.pem
+      keyFile: /ssl/bwprivate.key
+  options:
+    default:
+      cipherSuites:
+        - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
+        - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
+      minVersion: VersionTLS12
+
